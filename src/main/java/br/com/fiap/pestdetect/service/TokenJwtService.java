@@ -13,8 +13,7 @@ import br.com.fiap.pestdetect.repositories.UsuarioRepository;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.*;
 
 @Service
 public class TokenJwtService {
