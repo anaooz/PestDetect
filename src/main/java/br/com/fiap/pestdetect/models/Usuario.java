@@ -23,6 +23,7 @@ public class Usuario implements UserDetails{
     private String email;
     private String senha;
 
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(() -> "ROLE_USUARIO");
     }
