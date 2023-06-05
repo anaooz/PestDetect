@@ -14,7 +14,6 @@ public class Conta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String icone;
 
     @JsonIgnore
     private boolean ativa = true;
