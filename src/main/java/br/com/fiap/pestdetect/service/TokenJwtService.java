@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
+import br.com.fiap.pestdetect.models.Conta;
 import br.com.fiap.pestdetect.models.Credencial;
 import br.com.fiap.pestdetect.models.JwtToken;
-import br.com.fiap.pestdetect.models.Usuario;
-import br.com.fiap.pestdetect.repositories.UsuarioRepository;
+import br.com.fiap.pestdetect.repositories.ContaRepository;
 import jakarta.validation.Valid;
 
 import java.time.Instant;
@@ -23,7 +23,7 @@ public class TokenJwtService {
     String secret;
 
     @Autowired
-    UsuarioRepository repository;
+    ContaRepository repository;
 
     public JwtToken generateToken(@Valid Credencial credencial) {
         Algorithm alg = Algorithm.HMAC256(secret);
@@ -36,7 +36,7 @@ public class TokenJwtService {
         return new JwtToken(token);
     }
 
-    public Usuario validate(String token) {
+    public Conta validate(String token) {
         Algorithm alg = Algorithm.HMAC256(secret);
         var email = JWT.require(alg)
                     .withIssuer("PestDetect")

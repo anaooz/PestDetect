@@ -39,7 +39,7 @@ public class PesteController {
     PagedResourcesAssembler<Object> assembler;
 
     @GetMapping
-    public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) String busca, @ParameterObject @PageableDefault(size = 5) Pageable pageable) {
+    public PagedModel<EntityModel<Object>> index(@RequestParam(required = false) String busca, @ParameterObject @PageableDefault(size = 6) Pageable pageable) {
         Page<Peste> pestes = (busca == null)?
             pesteRepository.findAll(pageable):
             pesteRepository.findByNomePopular(busca, pageable);
