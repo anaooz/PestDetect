@@ -7,8 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.web.*;
 import org.springframework.hateoas.*;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import br.com.fiap.pestdetect.exceptions.RestNotFoundException;
@@ -17,7 +16,6 @@ import br.com.fiap.pestdetect.models.Peste;
 import br.com.fiap.pestdetect.repositories.ContaRepository;
 import br.com.fiap.pestdetect.repositories.PesteRepository;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.*;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;

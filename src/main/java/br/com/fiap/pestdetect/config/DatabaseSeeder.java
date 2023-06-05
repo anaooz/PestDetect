@@ -35,8 +35,8 @@ public class DatabaseSeeder implements CommandLineRunner {
         contaRepository.saveAll(List.of(c1, c2, c3, c4, c5));
 
         pesteRepository.saveAll(List.of(
-            Peste.builder().nomePopular("Antracnose").nomeCientifico("Colletotrichum truncatum").tipo("Fungo").metodoDeControle("Fungicidas").build(),
-            Peste.builder().nomePopular("Lagarta-do-cartucho").nomeCientifico("Spodoptera frugiperda").tipo("Lagarta").metodoDeControle("Inseticidas").build(),
+            Peste.builder().nomePopular("Antracnose").nomeCientifico("Colletotrichum truncatum").tipo("Fungo").metodoDeControle("Fungicidas").conta(c4).build(),
+            Peste.builder().nomePopular("Lagarta-do-cartucho").nomeCientifico("Spodoptera frugiperda").tipo("Lagarta").metodoDeControle("Inseticidas").conta(c5).build(),
             Peste.builder().nomePopular("Pulgão").nomeCientifico("Aphidoidea").tipo("Inseto").metodoDeControle("Inseticidas, predadores naturais.").conta(c3).build(),
             Peste.builder().nomePopular("Ferrugem da soja").nomeCientifico("Phakopsora pachyrhizi").tipo("Fungo").metodoDeControle("Fungicidas").conta(c1).build(),
             Peste.builder().nomePopular("Broca-do-café").nomeCientifico("Hypothenemus hampei").tipo("Besouro").metodoDeControle("Manejo integrado de pragas, aplicação de produtos químicos").conta(c2).build()
