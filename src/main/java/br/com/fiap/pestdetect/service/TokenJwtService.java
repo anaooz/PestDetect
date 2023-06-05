@@ -9,6 +9,7 @@ import br.com.fiap.pestdetect.models.Credencial;
 import br.com.fiap.pestdetect.models.JwtToken;
 import br.com.fiap.pestdetect.models.Usuario;
 import br.com.fiap.pestdetect.repositories.UsuarioRepository;
+import jakarta.validation.Valid;
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -24,12 +25,12 @@ public class TokenJwtService {
     @Autowired
     UsuarioRepository repository;
 
-    public JwtToken generateToken(Credencial credencial) {
+    public JwtToken generateToken(@Valid Credencial credencial) {
         Algorithm alg = Algorithm.HMAC256(secret);
         var token = JWT.create()
                     .withExpiresAt(Instant.now().plus(2, ChronoUnit.HOURS))
                     .withSubject(credencial.email())
-                    .withIssuer("pestdetect")
+                    .withIssuer("PestDetect")
                     .sign(alg);
         
         return new JwtToken(token);
@@ -38,7 +39,7 @@ public class TokenJwtService {
     public Usuario validate(String token) {
         Algorithm alg = Algorithm.HMAC256(secret);
         var email = JWT.require(alg)
-                    .withIssuer("pestdetect")
+                    .withIssuer("PestDetect")
                     .build()
                     .verify(token)
                     .getSubject();

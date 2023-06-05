@@ -5,6 +5,6 @@ import org.springframework.security.core.Authentication;
 
 public record Credencial(String email, String senha) {
     public Authentication toAuthentication() {
-        return new UsernamePasswordAuthenticationToken(senha, email);
+        return new UsernamePasswordAuthenticationToken(email, senha);
     }
 }
