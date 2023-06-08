@@ -8,6 +8,7 @@ Repositório pro projeto de Digital Business Enablement
 - 94329 - Jean Soares Ferreira
 - 94348 - Kaio Gomes Vilarinho Vieira Pereira
 
+[Vídeo da API](https://youtu.be/9Wi1NdP9hl4)
 ---
 ### Instalação/Utilização da API:
 ```$ git clone https://github.com/anaooz/PestDetect.git```
